@@ -1,0 +1,16 @@
+version: 1.0.{build}
+build_script:
+- ps: >-
+    cd c:\\projects\\git-crypt
+
+    c:\msys64\usr\bin\bash script.sh
+
+    dir
+artifacts:
+- path: git-crypt.exe
+deploy:
+- provider: GitHub
+  auth_token:
+    secure: 1RntiMdr3N7NpbOzF6MG0LASYb+mZqKChGLt1UwLPXBpdExxg6OTNZ5Ev5rC3nun
+  artifact: git-crypt.exe
+  draft: true
