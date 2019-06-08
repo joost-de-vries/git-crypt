@@ -27,7 +27,7 @@ OBJFILES = \
 OBJFILES += crypto-openssl-10.o crypto-openssl-11.o
 ifeq ($(OS),Windows_NT)
 	CXXFLAGS += -static -static-libgcc
-	LDFLAGS += -lcrypto -lgdi32 -lz
+	LDFLAGS += -lcrypto -lz -lgdi32 -lws2_32
 else
 	LDFLAGS += -lcrypto
 endif
